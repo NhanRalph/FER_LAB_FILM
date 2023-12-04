@@ -1,0 +1,92 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.news-container {
+    // background-color: $background_dark;
+    // width: 100vw;
+    // height: 100vh;
+
+    .news-header {
+        padding-top: 100px;
+        text-align: center;
+        // color: $text_light;
+        text-shadow: #fff 0em 0em 0.2em;
+        font-size: 2rem;
+        letter-spacing: 4px;
+        font-weight: 700;
+        margin-bottom: 48px;
+    }
+
+    .news-content {
+            width: 80%;
+            margin: 0 auto;
+
+            .new-content-item {
+                position: relative;
+                margin-top: 30px;
+
+
+                .new-content-item-title {
+                    position: absolute;
+                    top: 0;
+                    left: 20px;
+                    transform: translateY(-70%);
+                    text-align: left;
+                    text-decoration: underline;
+                    color: $text_light;
+                    text-shadow: #000 0em 0em 0.2em;
+                    font-size: 2rem;
+                    line-height: 2rem;
+                    letter-spacing: 4px;
+                    font-weight: 700;
+                    z-index: 10;
+                    // margin-bottom: 16px;
+                }
+                .news-swiper {
+                    width: 100%;
+                    height: 100%;
+    
+                    .swiper-button-prev {
+                        left: 0;
+                    }
+    
+                    .swiper-button-next {
+                        right: 0;
+    
+                        
+                    }
+    
+                    .swiper-button-next, .swiper-button-prev {
+                        color: $text_light_opacify;
+                        font-size: 1rem;
+                        top: 100px;
+                        transform: translateY(-50%);
+                        background-color: rgba(0, 0, 0, 0.5) !important;
+                        border-radius: 4px;
+                        padding: 0 4px;
+                        width: 28px;
+                        height: 80px;
+                        transition: all 0.3s ease-in-out;
+                        &:hover {
+                            color: $text_light;
+                            background-color: rgba(0, 0, 0, 0.7) !important;
+                        }
+                    }
+                }
+    
+                .swiper-slide {
+                    text-align: center;
+                    font-size: 18px;
+                    background-color: transparent !important;
+                }
+    
+                .news-swiper-title {
+                    text-align: center;
+                    font-size: 1rem;
+                    letter-spacing: 2px;
+                    font-weight: 600;
+                }
+            }
+
+    }
+}

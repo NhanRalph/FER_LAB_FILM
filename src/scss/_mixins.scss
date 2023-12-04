@@ -1,0 +1,97 @@
+
+@mixin reset {
+    margin: 0;
+    padding: 0;
+  }
+  
+
+@mixin background-image($image) {
+    background-image: url($image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+    @mixin background-gradient-dark($deg) {
+        background-image: linear-gradient($deg,rgba(0,0,0,.8),rgba(0,0,0,0));
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+
+    @mixin flex-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    //border-radius
+
+    @mixin border-radius($radius) {
+        -webkit-border-radius: $radius;
+        -moz-border-radius: $radius;
+        border-radius: $radius;
+    }
+
+    //Box shadow
+
+    @mixin box-shadow($x, $y, $blur, $color) {
+        box-shadow: $x $y $blur $color;
+      }
+      
+    //Button style
+
+    @mixin button-style {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      @mixin button-style($bg-color, $text-color) {
+        padding: 10px 20px;
+        background-color: $bg-color;
+        color: $text-color;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      
+        &:hover {
+          background-color: darken($bg-color, 10%);
+        }
+      
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+      
+
+      //Transition
+
+      @mixin transition($property, $duration) {
+        transition: $property $duration ease-in-out;
+      }
+      
+      //Responsive
+
+      @mixin mobile {
+        @media (max-width: 768px) {
+          @content;
+        }
+      }
+      
+      @mixin tablet {
+        @media (min-width: 769px) and (max-width: 1024px) {
+          @content;
+        }
+      }
+      
+      @mixin desktop {
+        @media (min-width: 1025px) {
+          @content;
+        }
+      }
+      

@@ -1,0 +1,114 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.swiper {
+    width: 100%;
+    height: 100vh;
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        // /* Center slide text vertically */
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .backgroundGradient {
+            @include background-gradient-dark(90deg);
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+        .slide-content {
+            position: absolute;
+            top: 30%;
+            left: 100px;
+            transform: translate(0, -16%);
+            z-index: 10;
+            text-align: left;
+
+            .slide-content-text {
+                height: 100%;
+
+                .slide-content-text-title {
+                    width: 60%;
+                    font-size: 6rem;
+                    font-weight: 500;
+                    letter-spacing: 2px;
+                    color: $text_light;
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    font-variant: small-caps;
+                    text-shadow: #fff 0em 0em 0.2em;
+                }
+
+                .slide-content-text-desc {
+                    width: 500px;
+                    color: $text_light;
+
+                    .slide-content-more-detail {
+                        text-decoration: none;
+                        list-style: none;
+                        color: $text_light_opacify;
+                        margin-top: 16px;
+                        display: flex;
+                        align-items: center;
+                        transition: all 0.3s ease-in-out;
+                        .slide-content-more-detail-icon {
+                            margin-left: 8px;
+                            transition: transform 0.3s ease-in-out;
+                        }
+
+                        &:hover {
+                            color: $text_light;
+                            text-shadow: $text_light 0em 0em 0.1em;
+
+                            .slide-content-more-detail-icon {
+                                transform: translateX(8px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.slider-main-swiper {
+
+    .swiper-button-next {
+        top: 94%;
+        right: 24px;
+    }
+
+    .swiper-button-prev {
+        left: calc(100% - 140px);
+        top: 94%;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        padding: 12px;
+        width: 12px;
+        height: 12px;
+        color: #fff;
+        @include border-radius(50%);
+        border: #fff solid 2px;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        font-size: 12px !important;
+    }
+}
